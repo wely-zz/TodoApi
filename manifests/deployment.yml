@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akswithapimsea-a88e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akswithapimsea-a88e"
+  template:
+    metadata:
+      labels:
+        app: "akswithapimsea-a88e"
+    spec:
+      containers:
+        - name: "akswithapimsea-a88e"
+          image: "aksworkshopwelyacr.azurecr.io/akswithapimsea"
+          ports:
+          - containerPort: 5000
